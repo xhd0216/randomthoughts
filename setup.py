@@ -1,9 +1,9 @@
 import setuptools
 
 setuptools.setup(
-    name="zli",
-    version="0.0.3",
-    author="Joe",
+    name="random_thoughts",
+    version="0.0.5",
+    author="Joe Awake",
     author_email="xhd0216@gmail.com",
     description="A small stock package",
     packages=setuptools.find_packages(),
