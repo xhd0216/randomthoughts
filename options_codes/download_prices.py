@@ -22,6 +22,11 @@ def download_origin(symb, with_date=None):
     return resp
 
 
+def extract_data_wrapper(symbol):
+    """ wrapper """
+    resp = download_origin(symbol)
+    return extract_data(resp)
+
 def extract_data(resp):
     """
         extract data from http resp 
