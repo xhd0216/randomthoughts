@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import os
 import json
 import urllib3
@@ -18,8 +19,10 @@ def stock_download(symbol, interval, timerange):
     js = json.loads(c)
     
     quotes = js["chart"]["result"][0]["indicators"]["quote"][0]
-    quotes["timestamp"] = js["chart"]["result"][0]["timestamp"]
+    quotes["date"] = [datetime.datetime.fromtimestamp(x) for x in js["chart"]["result"][0]["timestamp"]]
+
     return quotes
+
 
 
 def stocks_download_main():
@@ -41,4 +44,6 @@ def stocks_download_main():
                         help="specify time range, e.g., 1d, 1y, ...")
     opt = parser.parse_args()
 
-    return stock_download(opt.symbol, opt.interval, opt.timerange)
+    return stock_download(opt.symbol, opt.interval, opt.time_range)
+
+
