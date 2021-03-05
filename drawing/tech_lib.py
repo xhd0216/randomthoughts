@@ -13,6 +13,7 @@ def get_stock_df(symbol, interval="1d", timerange="1y"):
 
     return df
 
+
 def get_image():
     """ returns a html <div> of image """
     symbol = "tsla"
@@ -23,7 +24,4 @@ def get_image():
     qf = cf.QuantFig(df)
     qf.add_bollinger_bands()
     qf.add_volume()
-    return qf.figure().to_html(full_html=False, include_plotlyjs=False)
-
-if __name__ == "__main__":
-    print(get_image())
+    return qf.figure().to_html(full_html=False, include_plotlyjs=True)
