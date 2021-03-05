@@ -24,4 +24,4 @@ def get_image():
     qf = cf.QuantFig(df)
     qf.add_bollinger_bands()
     qf.add_volume()
-    return qf.figure().to_html(full_html=False, include_plotlyjs=True)
+    return qf.figure().to_html(full_html=True, include_plotlyjs=True)
