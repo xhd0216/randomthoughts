@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="randomthoughts",
-    version="0.0.7",
+    version="0.0.8",
     author="Joe Awake",
     author_email="xhd0216@gmail.com",
     description="A small stock package",
@@ -15,7 +15,7 @@ setuptools.setup(
     python_requires='>=3.6',
     install_requires=[
         "cufflinks==0.17.3",
-        "pandas==1.2.3",
+        "pandas>=1.1.5",
         "urllib3",
     ],
     entry_points={
