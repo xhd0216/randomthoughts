@@ -15,13 +15,19 @@ def stock_download(symbol, interval, timerange):
 
     if resp.status > 299:
         raise ValueError("status code is not 200-299")
-    c = resp.data.decode("utf-8")
-    js = json.loads(c)
+    try:
+        c = resp.data.decode("utf-8")
+        js = json.loads(c)
     
-    quotes = js["chart"]["result"][0]["indicators"]["quote"][0]
-    quotes["date"] = [datetime.datetime.fromtimestamp(x) for x in js["chart"]["result"][0]["timestamp"]]
+        quotes = js["chart"]["result"][0]["indicators"]["quote"][0]
+        quotes["date"] = [datetime.datetime.fromtimestamp(x) for x in js["chart"]["result"][0]["timestamp"]]
 
-    return quotes
+        return quotes
+    except:
+        print(resp.status)
+        print(resp.data.decode("utf-8"))
+        print(resp.error)
+        raise
 
 
 

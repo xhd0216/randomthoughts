@@ -14,14 +14,15 @@ def get_stock_df(symbol, interval="1d", timerange="1y"):
     return df
 
 
-def get_image():
+def get_image(symbol, interval, timerange):
     """ returns a html <div> of image """
-    symbol = "tsla"
-    interval = "1d"
-    timerange = "1y"
-
     df = get_stock_df(symbol, interval, timerange)
     qf = cf.QuantFig(df)
     qf.add_bollinger_bands()
+    qf.add_sma(5)
+    qf.add_sma(10)
+    qf.add_sma(20)
     qf.add_volume()
+    qf.add_rsi()
+    qf.add_macd()
     return qf.figure().to_html(full_html=True, include_plotlyjs=True)
