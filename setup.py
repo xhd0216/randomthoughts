@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="randomthoughts",
-    version="0.0.9",
+    version="0.0.10",
     author="Joe Awake",
     author_email="xhd0216@gmail.com",
     description="A small stock package",
@@ -20,8 +20,8 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'download_options = options_codes.download_prices:options_download_main',
-            'download_stocks = stock_codes.download_prices:stocks_download_main',
+            'download_options = randomthoughts.options_codes.download_prices:options_download_main',
+            'download_stocks = randomthoughts.stock_codes.download_prices:stocks_download_main',
         ],
     },
 )
