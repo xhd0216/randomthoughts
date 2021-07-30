@@ -2,7 +2,7 @@ import pandas as pd
 import cufflinks as cf
 
 
-from stock_codes.download_prices import stock_download
+from randomthoughts.stock_codes.download_prices import stock_download
 
 
 def get_stock_df(symbol, interval="1d", timerange="1y"):
