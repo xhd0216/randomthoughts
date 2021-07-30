@@ -25,4 +25,5 @@ def get_image(symbol, interval, timerange):
     qf.add_volume()
     qf.add_rsi()
     qf.add_macd()
+ 
     return qf.figure().to_html(full_html=True, include_plotlyjs=True)

@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="randomthoughts",
-    version="0.0.8",
+    version="0.0.9",
     author="Joe Awake",
     author_email="xhd0216@gmail.com",
     description="A small stock package",
