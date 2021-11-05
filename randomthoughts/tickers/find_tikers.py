@@ -33,7 +33,7 @@ def get_one(symb):
     res = [r for r in res if "/" not in r]
     return res
 
-def main():
+def get_tickers(limit=1000):
     q = queue.Queue()
     sp500 = get_sp_500()
     for r in sp500:
@@ -51,12 +51,13 @@ def main():
         res = get_one(s)
         for r in res:
             q.put(r)
-        if len(checked) > 1000:
+        if len(checked) > limit:
             break
-    for c in sorted(checked):
-        print(c)
-    print(len(checked))
+    return checked
 
 if __name__=="__main__":
-    main()
+    checked = get_tickers()
+    for c in sorted(checked):
+        print(c)
+    print(len(c))
     
