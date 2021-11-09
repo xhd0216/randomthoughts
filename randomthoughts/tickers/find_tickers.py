@@ -43,7 +43,7 @@ def get_tickers(limit=1000):
         s = q.get()
         s = s.upper()
         s = urllib.parse.unquote(s)
-        if "." in s or "=" in s:
+        if not s.isalpha() and "^" not in s:
             continue
         if s in checked:
             continue
@@ -59,5 +59,4 @@ if __name__=="__main__":
     checked = get_tickers()
     for c in sorted(checked):
         print(c)
-    print(len(c))
-    
+    print(len(checked)) 
